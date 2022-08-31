@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">OZE Assessment</string>
+    <string name="profiles">Profiles</string>
+    <string name="favorite">Favorite</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="removed_from_favorites">Remove from favorites</string>
+    <string name="added_to_favorites">Add to favorites</string>
+    <string name="user_saved">User Saved as favorite.</string>
+    <string name="user_removed">User removed from Favorites list.</string>
+    <string name="error">Error</string>
+    <string name="retry">Retry</string>
+    <string name="cancel">Cancel</string>
+</resources>

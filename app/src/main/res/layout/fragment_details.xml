@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="user"
+            type="com.example.ozeassessment.models.Item" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundColor">
+
+
+        <ImageView
+            android:id="@+id/main_imageView"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:scaleType="centerCrop"
+            loadImageFromUrl="@{user.avatar_url}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
+        <View
+            android:id="@+id/gradient_overlay"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:background="@drawable/gradient_overlay"
+            app:layout_constraintBottom_toBottomOf="@+id/main_imageView"
+            app:layout_constraintEnd_toEndOf="@+id/main_imageView"
+            app:layout_constraintStart_toStartOf="@+id/main_imageView"
+            app:layout_constraintTop_toTopOf="@+id/main_imageView"
+            app:layout_constraintVertical_bias="1.0" />
+
+
+        <Button
+            android:id="@+id/btn_add_remove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="20dp"
+            android:text="Add/Remove from favorites"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="@+id/main_imageView"
+            app:layout_constraintEnd_toEndOf="@+id/gradient_overlay"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/login_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/courgette"
+            android:text="@{user.login}"
+            tools:text="Title"
+            android:textColor="@color/titleColor"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_imageView" />
+
+
+        <TextView
+            android:id="@+id/score_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{String.valueOf(user.score)}"
+            android:textColor="@color/itemColor"
+            app:layout_constraintStart_toStartOf="@+id/login_textView"
+            app:layout_constraintTop_toBottomOf="@+id/login_textView" />
+
+
+        <TextView
+            android:id="@+id/vegan_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{String.valueOf(user.id)}"
+            android:textColor="@color/itemColor"
+            app:layout_constraintStart_toStartOf="@+id/gluten_free_textView"
+            app:layout_constraintTop_toBottomOf="@+id/gluten_free_textView" />
+
+        <TextView
+            android:id="@+id/gluten_free_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{user.followers_url}"
+            android:textColor="@color/itemColor"
+            app:layout_constraintStart_toStartOf="@+id/dairy_free_textView"
+            app:layout_constraintTop_toBottomOf="@+id/dairy_free_textView" />
+
+        <TextView
+            android:id="@+id/dairy_free_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{user.following_url}"
+            android:textColor="@color/itemColor"
+            app:layout_constraintStart_toStartOf="@+id/healthy_textView"
+            app:layout_constraintTop_toBottomOf="@+id/healthy_textView" />
+
+        <TextView
+            android:id="@+id/healthy_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{user.type}"
+            android:textColor="@color/itemColor"
+            app:layout_constraintStart_toStartOf="@+id/cheap_textView"
+            app:layout_constraintTop_toBottomOf="@+id/cheap_textView" />
+
+        <TextView
+            android:id="@+id/cheap_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{user.url}"
+            android:textColor="@color/itemColor"
+            app:layout_constraintStart_toStartOf="@+id/score_textView"
+            app:layout_constraintTop_toBottomOf="@+id/score_textView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
